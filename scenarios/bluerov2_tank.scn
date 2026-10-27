@@ -81,10 +81,17 @@
 		<world_transform rpy="0.0 0.0 1.57" xyz="0.0 0.0 -1.0"/>
 		<world_transform rpy="0.0 0.0 -.52" xyz="0.0 0.0 -1.0"/>
 	</static> -->
-
+	<!-- Veichle 1 -->
 	<include file="$(find stonefish_bluerov2)/scenarios/bluerov2.scn">
 		<arg name="vehicle_name" value="bluerov2"/>
 		<arg name="position" value="0.0 0.0 0.5"/>
+		<arg name="orientation" value="0.0 0.0 0.0"/>
+	</include>
+
+	<!-- Veichle 2 -->
+	<include file="$(find stonefish_bluerov2)/scenarios/bluerov2.scn">
+		<arg name="vehicle_name" value="bluerov2_2"/>
+		<arg name="position" value="1.5 0.0 0.5"/>
 		<arg name="orientation" value="0.0 0.0 0.0"/>
 	</include>
 </scenario>

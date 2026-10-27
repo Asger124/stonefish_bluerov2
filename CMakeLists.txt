@@ -35,6 +35,7 @@ ament_python_install_package(${PROJECT_NAME})
 # Install Python executables
 install(PROGRAMS
   scripts/ardusim_patch.py
+  scripts/rectangle_mission.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

@@ -34,9 +34,9 @@ class Patch(Node):
         self.timer = self.create_timer(1/50, self.looper)
 
         if self.namespace=='bluerov2':
-            PORT = 9012
-        elif self.namespace=='blueboat':
             PORT = 9002
+        elif self.namespace=='bluerov2_2':
+            PORT = 9012
 
         self.sock_sitl = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         self.sock_sitl.bind(('', PORT))
@@ -90,7 +90,7 @@ class Patch(Node):
         frame_count = decoded[2]
         pwm = decoded[3:]
 
-        if self.namespace=='bluerov2':
+        if self.namespace=='bluerov2' or self.namespace=='bluerov2_2':
             pwm_thrusters = pwm[0:8]
             pwm_setpoint = [(x-1500)/400 for x in pwm_thrusters]
 
@@ -201,7 +201,7 @@ def main(args=None):
     rclpy.init(args=args)
 
     # patch = Patch(node_name="ardusim_patch")
-    patch = Patch(node_name="ardusim_patch", namespace='blueboat')
+    patch = Patch(node_name="ardusim_patch", namespace=None)
     
     rclpy.spin(patch)
 

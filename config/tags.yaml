@@ -1,0 +1,15 @@
+apriltag:
+  ros__parameters:
+    image_transport: raw
+    family: 36h11
+    size: 0.25
+    max_hamming: 0
+    detector:
+      decimate: 1.0
+      refine: true
+      sharpening: 0.0
+    pose_estimation_method: "pnp"
+    tag:
+      ids: [0]
+      frames: ["leader_tag_frame"]
+      sizes: [0.25]

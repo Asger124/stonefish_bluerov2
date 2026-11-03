@@ -6,7 +6,7 @@
 		<look name="apriltag" gray="1.0" roughness="0.2" texture="bluerov2/tag36_11_00000.png"/>
 	</looks>
 
-	<robot name="$(arg vehicle_name)" fixed="false" self_collisions="false">
+	<robot name="$(arg vehicle_name)" fixed="$(arg fixed)" self_collisions="false">
 		<base_link name="base_link" type="compound" physics="submerged">
 			<external_part name="HullBottom" type="model" physics="submerged" buoyant="false">
 				<physical>
@@ -40,11 +40,11 @@
 
 			<!-- AprilTag Marker for Vision Tracking -->
             <external_part name="AprilTagMarker" type="box" physics="submerged" buoyant="false">
-                <dimensions xyz="0.01 0.12 0.12"/>
+                <dimensions xyz="0.00001 0.25 0.25"/>
                 <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-                <material name="Neutral"/>
-                <look name="apriltag"/>
-                <compound_transform rpy="0.0 3.14159 0.0" xyz="-0.32 0.0 0.0"/>
+                <material name="Fiberglass"/>
+                <look name="apriltag" uv_mode="1"/>
+                <compound_transform rpy="0.0 3.14159 0.0" xyz="-0.40 0.0 0.0"/>
             </external_part>
 
 

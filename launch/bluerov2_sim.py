@@ -52,7 +52,7 @@ def generate_launch_description():
 
     return LaunchDescription([
         launch_include,
-        ardusim_patch,
+        #ardusim_patch,
         ardusim_patch_1,
         ardusim_patch_2,
     ])

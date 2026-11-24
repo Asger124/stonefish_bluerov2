@@ -40,7 +40,7 @@ class FollowerController(Node):
         self.timer = self.create_timer(0.05, self.control_loop)
 
         self.get_logger().info('Following leader at x=0.0, y=0.0, z=1.0 m')
-
+    # Correct order: surge (x), sway (y), throttle (z)
     def send_control(self, x, y, z):
         x = max(-1.0, min(1.0, x))
         y = max(-1.0, min(1.0, y))
@@ -91,7 +91,7 @@ class FollowerController(Node):
         command_y = max(-MAX_COMMAND, min(MAX_COMMAND, command_y))
         command_z = max(-MAX_COMMAND, min(MAX_COMMAND, command_z))
 
-        self.send_control(command_z, command_x, command_y)
+        self.send_control(command_x, command_y, command_z)
         self.get_logger().info(
             f'x={x:.2f} y={y:.2f} z={z:.2f}',
             throttle_duration_sec=0.5,

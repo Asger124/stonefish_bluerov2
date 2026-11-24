@@ -37,6 +37,7 @@ install(PROGRAMS
   scripts/ardusim_patch.py
   scripts/rectangle_mission.py
   scripts/follower_pi_controller.py
+  scripts/follower_pi_orbit.py
   scripts/leader_forward_mission.py
   DESTINATION lib/${PROJECT_NAME}
 )
